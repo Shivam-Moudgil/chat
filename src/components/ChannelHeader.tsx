@@ -1,5 +1,7 @@
 // src/components/ChannelHeader.tsx
 
+import React from "react";
+
 interface ChannelHeaderProps {
     channelName: string | null;
 }

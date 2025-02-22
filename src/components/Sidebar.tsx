@@ -1,4 +1,5 @@
 // src/components/Sidebar.tsx
+import React from 'react';
 import type { Channel, User } from '../types';
 
 interface SidebarProps {

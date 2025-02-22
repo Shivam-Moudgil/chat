@@ -1,5 +1,6 @@
 // src/components/MessageList.tsx
 
+import React from 'react';
 import type { Message, User } from '../types';
 
 interface MessageListProps {

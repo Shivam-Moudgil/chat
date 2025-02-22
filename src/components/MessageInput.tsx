@@ -1,5 +1,7 @@
 // src/components/MessageInput.tsx
 
+import React from "react";
+
 interface MessageInputProps {
   onSendMessage: (text: string) => void;
 }
