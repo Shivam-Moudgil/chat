@@ -1,19 +1,19 @@
-import React from 'react';
-import Sidebar from './components/Sidebar';
-import ChatHeader from './components/ChatHeader';
-import MessageList from './components/MessageList';
-import MessageInput from './components/MessageInput';
+import { Route, Routes } from 'react-router-dom';
+import { useAuth } from './context/UserContext';
+import Chat from './pages/Chat';
+import Login from './pages/Login';
+
 
 function App() {
+const {user} = useAuth();
+console.log(user,"User from the app component");
   return (
-    <div className="flex h-screen bg-white">
-      <Sidebar />
-      <div className="flex-1 flex flex-col">
-        <ChatHeader channelName="general" memberCount={24} />
-        <MessageList />
-        <MessageInput />
-      </div>
-    </div>
+   <>
+   <Routes>
+    <Route path="/" element={user?<Chat />:<Login />} />
+    <Route path='*' element={<div>Not Found</div>}/>
+   </Routes>
+   </>
   );
 }
 

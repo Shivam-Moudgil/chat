@@ -43,6 +43,7 @@ const Sidebar = () => {
   ]);
 
   const handleCreateChannel = (name: string, members: string[]) => {
+    console.log(members)
     const newChannel: Channel = {
       id: String(channels.length + 1),
       name,

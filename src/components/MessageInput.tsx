@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { Paperclip, Smile, Send, Bold, Italic, Link as LinkIcon, Code, X } from 'lucide-react';
 
-interface MessageInputProps {
-  onSendMessage: (content: string, attachments: File[]) => void;
-}
+// interface MessageInputProps {
+//   onSendMessage: (content: string, attachments: File[]) => void;
+// }
 
-const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
+const MessageInput: React.FC = () => {
   const [message, setMessage] = useState('');
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -13,7 +13,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (message.trim() || selectedFiles.length > 0) {
-      onSendMessage(message.trim(), selectedFiles);
+      // onSendMessage(message.trim(), selectedFiles);
       setMessage('');
       setSelectedFiles([]);
     }
