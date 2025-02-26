@@ -6,12 +6,13 @@ export interface SidebarProps{
 export interface AvailableUsers{
     _id:string;
     name:string;
+    email: string;
     avatar:Image;
 }
 
 interface Image{
     url:string;
-        localPath:string;
+    localPath:string;
 }
 
 export interface MessageListProps{
@@ -26,4 +27,15 @@ export interface MessageData{
     attachments:Image[];
     createdAt:string;
     updatedAt:string;
+}
+
+export interface Chat {
+  _id: string;
+  name: string;
+  isGroupChat: boolean;
+  participants: AvailableUsers[];
+  admin?: string; // Optional because group chats have an admin
+  createdAt: string;
+  updatedAt: string;
+  lastMessage?: MessageData; // Optional last message
 }

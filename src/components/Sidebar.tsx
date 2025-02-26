@@ -1,4 +1,4 @@
-import { AlignLeft, ChevronDown, Hash, MessageSquare, Plus, Search, Settings } from 'lucide-react';
+import { ChevronDown, Hash, MessageSquare, Plus, Search, Settings } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { AvailableUsers, SidebarProps } from '../interfaces/chat';
 import ChannelModal from './ChannelModal';
@@ -12,13 +12,13 @@ interface Channel {
   isAdmin?: boolean;
 }
 
-interface DirectMessage {
-  id: string;
-  name: string;
-  avatar: string;
-  status: 'online' | 'offline' | 'away' | 'busy';
-  unread: number;
-}
+// interface DirectMessage {
+//   id: string;
+//   name: string;
+//   avatar: string;
+//   status: 'online' | 'offline' | 'away' | 'busy';
+//   unread: number;
+// }
 
 const Sidebar:React.FC<SidebarProps> = ({availableUsers,setChat}) => {
   const {user}=useAuth()
